@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Thomas Noorlander</title>
+
+  <style>
+    /* =========================
+       RESET & BASIS
+       ========================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      background-color: #f4f5f7;
+      color: #333;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+
+    /* =========================
+       CV CONTAINER
+       ========================= */
+
+    .cv-card {
+      max-width: 900px;
+      margin: 0 auto;
+
+      background-color: #fff;
+
+      border-radius: 8px;
+      overflow: hidden;
+
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+      display: grid;
+      grid-template-columns: 280px 1fr;
+    }
+
+
+    /* =========================
+       SIDEBAR
+       ========================= */
+
+    .sidebar {
+      background-color: #1e293b;
+      color: #f8fafc;
+
+      padding: 40px 30px;
+    }
+
+    .sidebar-section {
+      margin-bottom: 30px;
+    }
+
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+
+      font-size: 1.1rem;
+      font-weight: 600;
+
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      color: #38bdf8;
+
+      border-bottom: 1px solid #334155;
+    }
+
+
+    /* =========================
+       CONTACT & TALEN
+       ========================= */
+
+    .contact-list,
+    .skills-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 10px;
+      word-break: break-word;
+    }
+
+    .contact-list li:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* =========================
+       VAARDIGHEDEN
+       ========================= */
+
+    .skills-list li {
+      display: inline-block;
+
+      margin: 0 4px 8px 0;
+      padding: 4px 10px;
+
+      background-color: #334155;
+      border-radius: 4px;
+
+      font-size: 0.85rem;
+    }
+
+
+    /* =========================
+       MAIN CONTENT
+       ========================= */
+
+    .main-content {
+      padding: 40px;
+    }
+
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    .header {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .header h1 {
+      color: #0f172a;
+
+      font-size: 2.2rem;
+      line-height: 1.2;
+    }
+
+
+    /* =========================
+       SECTIES
+       ========================= */
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      margin-bottom: 16px;
+
+      color: #0f172a;
+
+      font-size: 1.3rem;
+      line-height: 1.3;
+    }
+
+
+    /* =========================
+       PROFIEL
+       ========================= */
+
+    .profile {
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    .profile p + p {
+      margin-top: 14px;
+    }
+
+
+    /* =========================
+       ITEMS
+       ========================= */
+
+    .item {
+      margin-bottom: 20px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      color: #1e293b;
+
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .item-date {
+      flex-shrink: 0;
+
+      color: #64748b;
+
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .item-company {
+      margin-bottom: 8px;
+
+      color: #0284c7;
+
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .item-description {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+
+    /* =========================
+       PRINT
+       ========================= */
+
+    @media print {
+      body {
+        padding: 0;
+        background-color: #fff;
+      }
+
+      .cv-card {
+        max-width: 100%;
+
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+
+
+    /* =========================
+       MOBIEL
+       ========================= */
+
+    @media (max-width: 768px) {
+      body {
+        padding: 0;
+      }
+
+      .cv-card {
+        grid-template-columns: 1fr;
+        border-radius: 0;
+      }
+
+      .sidebar {
+        padding: 30px 20px;
+      }
+
+      .main-content {
+        padding: 30px 20px;
+      }
+
+      .item-header {
+        flex-direction: column;
+        gap: 2px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div class="cv-card">
+
+    <!-- =========================
+         SIDEBAR
+         ========================= -->
+
+    <aside class="sidebar">
+
+      <section class="sidebar-section">
+        <h2>Contact</h2>
+
+        <ul class="contact-list">
+          <li>
+            <strong>E-mail:</strong><br>
+            tomnnoorlander@gmail.com
+          </li>
+
+          <li>
+            <strong>Telefoon:</strong><br>
+            +31 6 10227008
+          </li>
+
+          <li>
+            <strong>Locatie:</strong><br>
+            Oud-Beijerland, Nederland
+          </li>
+
+          <li>
+            <strong>Geboortedatum:</strong><br>
+            18 november 1988
+          </li>
+        </ul>
+      </section>
+
+
+      <section class="sidebar-section">
+        <h2>Vaardigheden</h2>
+
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>Django</li>
+          <li>Excel</li>
+          <li>HTML5/CSS</li>
+        </ul>
+      </section>
+
+
+      <section class="sidebar-section">
+        <h2>Talen</h2>
+
+        <ul class="contact-list">
+          <li>
+            <strong>Nederlands:</strong> Moedertaal
+          </li>
+
+          <li>
+            <strong>Engels:</strong> Vloeiend
+          </li>
+
+          <li>
+            <strong>Portugees:</strong> Gemiddeld niveau
+          </li>
+        </ul>
+      </section>
+
+    </aside>
+
+
+    <!-- =========================
+         HOOFDINHOUD
+         ========================= -->
+
+    <main class="main-content">
+
+
+      <!-- HEADER -->
+
+      <header class="header">
+        <h1>Thomas Noorlander</h1>
+      </header>
+
+
+      <!-- PROFIEL -->
+
+      <section class="section">
+        <h2 class="section-title">Profiel</h2>
+
+        <div class="profile">
+
+          <p>
+            Ambitieus en leergierig. Ik heb ruime werkervaring opgedaan als
+            schoonmaker en orderpicker en ben gewend om zelfstandig en
+            nauwkeurig te werken. Momenteel ben ik op zoek naar een passende
+            kantoorbaan waarin ik mijn vaardigheden verder kan ontwikkelen en
+            nieuwe ervaring kan opdoen.
+          </p>
+
+          <p>
+            Daarnaast heb ik verschillende cursussen gevolgd op het gebied van
+            HTML5/CSS, Python, Excel en Django. Deze cursussen heb ik succesvol
+            afgerond en hiervoor heb ik certificaten ontvangen.
+          </p>
+
+        </div>
+      </section>
+
+
+      <!-- WERKERVARING -->
+
+      <section class="section">
+        <h2 class="section-title">Werkervaring</h2>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              Schoonmaak / Magazijnwerk
+            </span>
+
+            <span class="item-date">
+              2023 – 2024
+            </span>
+          </div>
+
+          <div class="item-company">
+            Bakkerij Van Strien, Oud-Beijerland
+          </div>
+        </article>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              Orderpicker
+            </span>
+
+            <span class="item-date">
+              2022 – 2023
+            </span>
+          </div>
+
+          <div class="item-company">
+            De Notenshop, Strijen
+          </div>
+        </article>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              Magazijnmedewerker / Orderpicker
+            </span>
+
+            <span class="item-date">
+              2016 – 2019
+            </span>
+          </div>
+
+          <div class="item-company">
+            Alpha Holland, Oud-Beijerland
+          </div>
+        </article>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              Schoonmaakwerk
+            </span>
+
+            <span class="item-date">
+              2009 – 2012
+            </span>
+          </div>
+
+          <div class="item-company">
+            Alpha Holland, Oud-Beijerland
+          </div>
+        </article>
+
+      </section>
+
+
+      <!-- OPLEIDINGEN -->
+
+      <section class="section">
+        <h2 class="section-title">Opleidingen</h2>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              Albeda College
+            </span>
+
+            <span class="item-date">
+              2007 – 2008
+            </span>
+          </div>
+
+          <div class="item-company">
+            Oude-Tonge
+          </div>
+        </article>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              Grafisch Lyceum Rotterdam
+            </span>
+
+            <span class="item-date">
+              2006 – 2007
+            </span>
+          </div>
+
+          <div class="item-company">
+            Rotterdam
+          </div>
+        </article>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              Juliana Mavo TL
+            </span>
+
+            <span class="item-date">
+              2001 – 2006
+            </span>
+          </div>
+
+          <div class="item-company">
+            Rotterdam
+          </div>
+        </article>
+
+      </section>
+
+
+      <!-- CURSUSSEN -->
+
+      <section class="section">
+        <h2 class="section-title">Cursussen & certificaten</h2>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              Advanced Python
+            </span>
+
+            <span class="item-date">
+              Behaald in 2025
+            </span>
+          </div>
+        </article>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              Excel VBA
+            </span>
+
+            <span class="item-date">
+              Behaald in 2024
+            </span>
+          </div>
+        </article>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              HTML / CSS
+            </span>
+
+            <span class="item-date">
+              Behaald in 2024
+            </span>
+          </div>
+        </article>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              Django
+            </span>
+
+            <span class="item-date">
+              Bezig
+            </span>
+          </div>
+        </article>
+
+
+        <article class="item">
+          <div class="item-header">
+            <span class="item-title">
+              Portugees
+            </span>
+
+            <span class="item-date">
+              Bezig
+            </span>
+          </div>
+        </article>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
